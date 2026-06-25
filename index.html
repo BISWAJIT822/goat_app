@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Mobile optimized scaling -->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Goat Insurance App</title>
+
+  <!-- Use modern Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons for modern light icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- App Container to enforce mobile constraint on desktop and full width on mobile -->
+  <main id="app-container">
+
+    <!-- ============================================== -->
+    <!-- SCREEN 1: LOGIN                                -->
+    <!-- ============================================== -->
+    <section id="screen-login" class="screen active">
+      <div class="login-header">
+        <div class="logo-container">
+          <!-- Stand-in for the goat logo -->
+          <i class="ph ph-bug"></i>
+        </div>
+        <h1>GOAT<br>INSURANCE</h1>
+        <p class="subtitle">Community Goat Insurance Programme</p>
+      </div>
+
+      <div class="login-form">
+        <label class="input-label">Mobile Number</label>
+        <div class="input-group">
+          <span class="country-code">+91 <i class="ph ph-caret-down"></i></span>
+          <input type="tel" id="mobile-number" placeholder="Enter mobile number" autocomplete="tel">
+        </div>
+
+        <button class="btn-primary" onclick="app.navigateTo('screen-dashboard')">Send OTP</button>
+        <p class="signup-link">Don't have an account? <a href="#" onclick="app.navigateTo('screen-signup')">Sign Up</a>
+        </p>
+      </div>
+
+      <div class="login-roles">
+        <div class="divider">
+          <span>or login as</span>
+        </div>
+
+        <div class="role-icons">
+          <div class="role-item">
+            <div class="icon-circle text-green"><i class="ph ph-user-check"></i></div>
+            <span>Suraksha Didi</span>
+          </div>
+          <div class="role-item">
+            <div class="icon-circle text-blue"><i class="ph ph-users"></i></div>
+            <span>Farmer</span>
+          </div>
+          <div class="role-item">
+            <div class="icon-circle text-orange"><i class="ph ph-briefcase"></i></div>
+            <span>Coordinator</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="login-footer">
+        <span class="version">Version 1.0.0</span>
+        <span class="offline-status"><span class="dot"></span> Offline</span>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 1.5: SIGN UP                            -->
+    <!-- ============================================== -->
+    <section id="screen-signup" class="screen">
+      <header class="app-header">
+        <button class="icon-btn" onclick="app.navigateTo('screen-login')"><i class="ph ph-arrow-left"></i></button>
+        <h2>Sign Up</h2>
+        <div class="spacer"></div>
+      </header>
+
+      <div class="list-container" style="background: white; padding-top: 24px;">
+        <div class="login-form" style="margin-top: 0;">
+          <label class="input-label">Full Name</label>
+          <div class="input-group">
+            <input type="text" placeholder="Enter full name">
+          </div>
+
+          <label class="input-label">Mobile Number</label>
+          <div class="input-group">
+            <span class="country-code">+91 <i class="ph ph-caret-down"></i></span>
+            <input type="tel" placeholder="Enter mobile number" autocomplete="tel">
+          </div>
+
+          <label class="input-label">Role</label>
+          <div class="input-group">
+            <select
+              style="flex: 1; padding: 14px; border: none; outline: none; font-size: 16px; background: transparent;">
+              <option>Suraksha Didi</option>
+              <option>Farmer</option>
+              <option>Coordinator</option>
+            </select>
+          </div>
+
+          <button class="btn-primary" onclick="app.navigateTo('screen-dashboard')" style="margin-top: 16px;">Create
+            Account</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 2: DIDI DASHBOARD                       -->
+    <!-- ============================================== -->
+    <section id="screen-dashboard" class="screen">
+      <header class="dashboard-header bg-green text-white">
+        <div class="user-info">
+          <div class="avatar">
+            <img src="https://i.pravatar.cc/100?img=5" alt="Profile">
+          </div>
+          <div class="welcome-text">
+            <h2>Hello, Sushma Didi 👋</h2>
+            <p>Suraksha Didi</p>
+          </div>
+        </div>
+        <button class="icon-btn text-white"><i class="ph ph-bell"></i></button>
+        <div class="curved-bottom"></div>
+      </header>
+
+      <div class="dashboard-content">
+        <div class="section-title">
+          <h3>This Month Overview</h3>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon text-blue"><i class="ph ph-list-numbers"></i></div>
+            <div class="stat-info">
+              <h4>128</h4>
+              <p>Goats Enrolled</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon text-orange"><i class="ph ph-file-text"></i></div>
+            <div class="stat-info">
+              <h4>12</h4>
+              <p>Pending Claims</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon text-green"><i class="ph ph-calendar-check"></i></div>
+            <div class="stat-info">
+              <h4>24</h4>
+              <p>Today's Visits</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon text-green"><i class="ph ph-currency-inr"></i></div>
+            <div class="stat-info">
+              <h4>8,450</h4>
+              <p>Earnings</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">
+          <h3>Quick Actions</h3>
+        </div>
+
+        <div class="actions-grid">
+          <div class="action-item" onclick="app.navigateTo('screen-goat-list')">
+            <div class="action-icon"><i class="ph ph-plus-circle"></i></div>
+            <span>Enroll Goat</span>
+          </div>
+          <div class="action-item" onclick="app.navigateTo('screen-vaccination')">
+            <div class="action-icon"><i class="ph ph-syringe"></i></div>
+            <span>Vaccination</span>
+          </div>
+          <div class="action-item">
+            <div class="action-icon"><i class="ph ph-heartbeat"></i></div>
+            <span>Mortality Report</span>
+          </div>
+          <div class="action-item">
+            <div class="action-icon"><i class="ph ph-file-text"></i></div>
+            <span>Claims</span>
+          </div>
+          <div class="action-item" onclick="app.navigateTo('screen-goat-list')">
+            <div class="action-icon"><i class="ph ph-list-dashes"></i></div>
+            <span>Goat List</span>
+          </div>
+          <div class="action-item">
+            <div class="action-icon"><i class="ph ph-robot"></i></div>
+            <span>AI Assistant</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Navigation -->
+      <nav class="bottom-nav">
+        <a href="#" class="nav-item active" onclick="app.navigateTo('screen-dashboard')">
+          <i class="ph-fill ph-house"></i>
+          <span>Home</span>
+        </a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-goat-list')">
+          <i class="ph ph-bug"></i>
+          <span>Goats</span>
+        </a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-vaccination')">
+          <i class="ph ph-syringe"></i>
+          <span>Vaccination</span>
+        </a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-claims')">
+          <i class="ph ph-file-text"></i>
+          <span>Claims</span>
+        </a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-more')">
+          <i class="ph ph-dots-three-circle"></i>
+          <span>More</span>
+        </a>
+      </nav>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 3: GOAT LIST                            -->
+    <!-- ============================================== -->
+    <section id="screen-goat-list" class="screen">
+      <header class="app-header">
+        <button class="icon-btn" onclick="app.navigateTo('screen-dashboard')"><i class="ph ph-arrow-left"></i></button>
+        <h2>Goat List</h2>
+        <div class="spacer"></div>
+      </header>
+
+      <div class="list-container">
+        <div class="search-bar">
+          <i class="ph ph-magnifying-glass"></i>
+          <input type="text" placeholder="Search by ear tag or farmer name">
+        </div>
+
+        <div class="tabs">
+          <button class="tab active">All (128)</button>
+          <button class="tab">Active (110)</button>
+          <button class="tab">Expired (10)</button>
+          <button class="tab">Claimed (8)</button>
+        </div>
+
+        <div class="goat-list">
+          <!-- List Item 1 -->
+          <div class="goat-card">
+            <div class="goat-img">
+              <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=150&q=80"
+                alt="Goat">
+            </div>
+            <div class="goat-details">
+              <h4>ET-240601-0001</h4>
+              <p class="farmer">Ramesh Naik</p>
+              <p class="location">Pipli</p>
+              <div class="status-badge status-active">Policy Active</div>
+              <p class="date-info">Next Vaccine: <strong>15 Aug 2024</strong></p>
+            </div>
+          </div>
+
+          <!-- List Item 2 -->
+          <div class="goat-card">
+            <div class="goat-img">
+              <img src="https://images.unsplash.com/photo-1619087578330-81995f591f42?auto=format&fit=crop&w=150&q=80"
+                alt="Goat">
+            </div>
+            <div class="goat-details">
+              <h4>ET-240601-0002</h4>
+              <p class="farmer">Suresh Behera</p>
+              <p class="location">Baliana</p>
+              <div class="status-badge status-active">Policy Active</div>
+              <p class="date-info">Next Vaccine: <strong>30 Aug 2024</strong></p>
+            </div>
+          </div>
+
+          <!-- List Item 3 -->
+          <div class="goat-card">
+            <div class="goat-img grayscale">
+              <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=150&q=80"
+                alt="Goat">
+            </div>
+            <div class="goat-details">
+              <h4>ET-240601-0003</h4>
+              <p class="farmer">Manoj Sahoo</p>
+              <p class="location">Pipli</p>
+              <div class="status-badge status-expired">Policy Expired</div>
+              <p class="date-info">Expired on: <strong>31 May 2024</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="fab" onclick="app.navigateTo('screen-enroll-1')">
+        <i class="ph ph-plus"></i>
+      </button>
+
+      <!-- Bottom Navigation -->
+      <nav class="bottom-nav">
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-dashboard')">
+          <i class="ph ph-house"></i>
+          <span>Home</span>
+        </a>
+        <a href="#" class="nav-item active" onclick="app.navigateTo('screen-goat-list')">
+          <i class="ph-fill ph-bug"></i>
+          <span>Goats</span>
+        </a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-vaccination')">
+          <i class="ph ph-syringe"></i>
+          <span>Vaccination</span>
+        </a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-claims')">
+          <i class="ph ph-file-text"></i>
+          <span>Claims</span>
+        </a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-more')">
+          <i class="ph ph-dots-three-circle"></i>
+          <span>More</span>
+        </a>
+      </nav>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 4: VACCINATION LIST                     -->
+    <!-- ============================================== -->
+    <section id="screen-vaccination" class="screen">
+      <header class="app-header">
+        <button class="icon-btn" onclick="app.navigateTo('screen-dashboard')"><i class="ph ph-arrow-left"></i></button>
+        <h2>Vaccination</h2>
+        <button class="icon-btn"><i class="ph ph-funnel"></i></button>
+      </header>
+
+      <div class="list-container">
+        <!-- Tabs: All / Upcoming / Completed -->
+        <div class="vacc-tabs">
+          <button class="vacc-tab active" data-tab="all" onclick="app.switchVaccTab(this, 'all')">All (17)</button>
+          <button class="vacc-tab" data-tab="upcoming" onclick="app.switchVaccTab(this, 'upcoming')">Upcoming (10)</button>
+          <button class="vacc-tab" data-tab="completed" onclick="app.switchVaccTab(this, 'completed')">Completed</button>
+        </div>
+
+        <!-- ALL Tab Content -->
+        <div id="vacc-tab-all" class="vacc-tab-content active">
+          <!-- Upcoming entries -->
+          <div class="vacc-card" onclick="app.navigateTo('screen-record-vaccination')">
+            <div class="vacc-card-row">
+              <div class="vacc-card-info">
+                <h4>ET-240601-0001</h4>
+                <p class="text-muted">Ramesh Naik</p>
+                <p class="text-muted" style="font-size:11px;">Black Bengal • Female • 12M</p>
+              </div>
+              <div class="vacc-card-img">
+                <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=100&q=80" alt="Goat">
+              </div>
+            </div>
+            <div class="vacc-card-vaccines">
+              <div class="vacc-vaccine-item">
+                <span class="vacc-vaccine-name">PPR Vaccine Due</span>
+                <span class="vacc-vaccine-date">15 Aug 2024</span>
+              </div>
+            </div>
+            <div class="vacc-card-footer">
+              <button class="btn-record" onclick="event.stopPropagation(); app.navigateTo('screen-record-vaccination')">
+                <i class="ph ph-note-pencil"></i> Record
+              </button>
+            </div>
+          </div>
+
+          <div class="vacc-card" onclick="app.navigateTo('screen-record-vaccination')">
+            <div class="vacc-card-row">
+              <div class="vacc-card-info">
+                <h4>ET-240601-0006</h4>
+                <p class="text-muted">Suresh Behera</p>
+                <p class="text-muted" style="font-size:11px;">Beetal • Male • 8M</p>
+              </div>
+              <div class="vacc-card-img">
+                <img src="https://images.unsplash.com/photo-1619087578330-81995f591f42?auto=format&fit=crop&w=100&q=80" alt="Goat">
+              </div>
+            </div>
+            <div class="vacc-card-vaccines">
+              <div class="vacc-vaccine-item">
+                <span class="vacc-vaccine-name">FMD Vaccine Due</span>
+                <span class="vacc-vaccine-date">18 Aug 2024</span>
+              </div>
+            </div>
+            <div class="vacc-card-footer">
+              <button class="btn-record" onclick="event.stopPropagation(); app.navigateTo('screen-record-vaccination')">
+                <i class="ph ph-note-pencil"></i> Record
+              </button>
+            </div>
+          </div>
+
+          <!-- Completed entries in All view -->
+          <div class="vacc-card completed">
+            <div class="vacc-card-row">
+              <div class="vacc-card-info">
+                <h4>ET-240601-0001</h4>
+                <p class="text-muted">Ramesh Naik</p>
+                <p class="text-muted" style="font-size:11px;">Black Bengal • Female • 12M</p>
+              </div>
+              <div class="vacc-card-img">
+                <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=100&q=80" alt="Goat">
+              </div>
+            </div>
+            <div class="vacc-card-vaccines">
+              <div class="vacc-vaccine-item done">
+                <span class="vacc-vaccine-name"><i class="ph-fill ph-check-circle text-green"></i> PPR Vaccine</span>
+                <span class="vacc-vaccine-date">10 Jun 2024</span>
+              </div>
+              <div class="vacc-vaccine-item done">
+                <span class="vacc-vaccine-name"><i class="ph-fill ph-check-circle text-green"></i> ET + TT Vaccine</span>
+                <span class="vacc-vaccine-date">10 Jun 2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="vacc-card" onclick="app.navigateTo('screen-record-vaccination')">
+            <div class="vacc-card-row">
+              <div class="vacc-card-info">
+                <h4>ET-240601-0008</h4>
+                <p class="text-muted">Manoj Sahoo</p>
+                <p class="text-muted" style="font-size:11px;">Black Bengal • Female • 15M</p>
+              </div>
+              <div class="vacc-card-img">
+                <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=100&q=80" alt="Goat">
+              </div>
+            </div>
+            <div class="vacc-card-vaccines">
+              <div class="vacc-vaccine-item">
+                <span class="vacc-vaccine-name">ET + TT Vaccine Due</span>
+                <span class="vacc-vaccine-date">20 Aug 2024</span>
+              </div>
+            </div>
+            <div class="vacc-card-footer">
+              <button class="btn-record" onclick="event.stopPropagation(); app.navigateTo('screen-record-vaccination')">
+                <i class="ph ph-note-pencil"></i> Record
+              </button>
+            </div>
+          </div>
+
+          <div class="vacc-card completed">
+            <div class="vacc-card-row">
+              <div class="vacc-card-info">
+                <h4>ET-240601-0002</h4>
+                <p class="text-muted">Suresh Behera</p>
+                <p class="text-muted" style="font-size:11px;">Beetal • Male • 8M</p>
+              </div>
+              <div class="vacc-card-img">
+                <img src="https://images.unsplash.com/photo-1619087578330-81995f591f42?auto=format&fit=crop&w=100&q=80" alt="Goat">
+              </div>
+            </div>
+            <div class="vacc-card-vaccines">
+              <div class="vacc-vaccine-item done">
+                <span class="vacc-vaccine-name"><i class="ph-fill ph-check-circle text-green"></i> PPR Vaccine</span>
+                <span class="vacc-vaccine-date">05 Jun 2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="vacc-card" onclick="app.navigateTo('screen-record-vaccination')">
+            <div class="vacc-card-row">
+              <div class="vacc-card-info">
+                <h4>ET-240601-0005</h4>
+                <p class="text-muted">Priya Patnaik</p>
+                <p class="text-muted" style="font-size:11px;">Black Bengal • Female • 10M</p>
+              </div>
+              <div class="vacc-card-img">
+                <img src="https://images.unsplash.com/photo-1619087578330-81995f591f42?auto=format&fit=crop&w=100&q=80" alt="Goat">
+              </div>
+            </div>
+            <div class="vacc-card-vaccines">
+              <div class="vacc-vaccine-item">
+                <span class="vacc-vaccine-name">Goat Pox Vaccine Due</span>
+                <span class="vacc-vaccine-date">25 Aug 2024</span>
+              </div>
+            </div>
+            <div class="vacc-card-footer">
+              <button class="btn-record" onclick="event.stopPropagation(); app.navigateTo('screen-record-vaccination')">
+                <i class="ph ph-note-pencil"></i> Record
+              </button>
+            </div>
+          </div>
+
+          <div class="vacc-card completed">
+            <div class="vacc-card-row">
+              <div class="vacc-card-info">
+                <h4>ET-240601-0010</h4>
+                <p class="text-muted">Gita Mohanty</p>
+                <p class="text-muted" style="font-size:11px;">Black Bengal • Female • 18M</p>
+              </div>
+              <div class="vacc-card-img">
+                <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=100&q=80" alt="Goat">
+              </div>
+            </div>
+            <div class="vacc-card-vaccines">
+              <div class="vacc-vaccine-item done">
+                <span class="vacc-vaccine-name"><i class="ph-fill ph-check-circle text-green"></i> FMD Vaccine</span>
+                <span class="vacc-vaccine-date">01 Jun 2024</span>
+              </div>
+              <div class="vacc-vaccine-item done">
+                <span class="vacc-vaccine-name"><i class="ph-fill ph-check-circle text-green"></i> Goat Pox</span>
+                <span class="vacc-vaccine-date">01 Jun 2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UPCOMING Tab Content -->
+        <div id="vacc-tab-upcoming" class="vacc-tab-content">
+          <!-- Vaccination Card 1 -->
+          <div class="vacc-card" onclick="app.navigateTo('screen-record-vaccination')">
+            <div class="vacc-card-row">
+              <div class="vacc-card-info">
+                <h4>ET-240601-0001</h4>
+                <p class="text-muted">Ramesh Naik</p>
+                <p class="text-muted" style="font-size:11px;">Black Bengal • Female • 12M</p>
+              </div>
+              <div class="vacc-card-img">
+                <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=100&q=80" alt="Goat">
+              </div>
+            </div>
+            <div class="vacc-card-vaccines">
+              <div class="vacc-vaccine-item">
+                <span class="vacc-vaccine-name">PPR Vaccine Due</span>
+                <span class="vacc-vaccine-date">15 Aug 2024</span>
+              </div>
+            </div>
+            <div class="vacc-card-footer">
+              <button class="btn-record" onclick="event.stopPropagation(); app.navigateTo('screen-record-vaccination')">
+                <i class="ph ph-note-pencil"></i> Record
+              </button>
+            </div>
+          </div>
+
+          <!-- Vaccination Card 2 -->
+          <div class="vacc-card" onclick="app.navigateTo('screen-record-vaccination')">
+            <div class="vacc-card-row">
+              <div class="vacc-card-info">
+                <h4>ET-240601-0006</h4>
+                <p class="text-muted">Suresh Behera</p>
+                <p class="text-muted" style="font-size:11px;">Beetal • Male • 8M</p>
+              </div>
+              <div class="vacc-card-img">
+                <img src="https://images.unsplash.com/photo-1619087578330-81995f591f42?auto=format&fit=crop&w=100&q=80" alt="Goat">
+              </div>
+            </div>
+            <div class="vacc-card-vaccines">
+              <div class="vacc-vaccine-item">
+                <span class="vacc-vaccine-name">FMD Vaccine Due</span>
+                <span class="vacc-vaccine-date">18 Aug 2024</span>
+              </div>
+            </div>
+            <div class="vacc-card-footer">
+              <button class="btn-record" onclick="event.stopPropagation(); app.navigateTo('screen-record-vaccination')">
+                <i class="ph ph-note-pencil"></i> Record
+              </button>
+            </div>
+          </div>
+
+          <!-- Vaccination Card 3 -->
+          <div class="vacc-card" onclick="app.navigateTo('screen-record-vaccination')">
+            <div class="vacc-card-row">
+              <div class="vacc-card-info">
+                <h4>ET-240601-0008</h4>
+                <p class="text-muted">Manoj Sahoo</p>
+                <p class="text-muted" style="font-size:11px;">Black Bengal • Female • 15M</p>
+              </div>
+              <div class="vacc-card-img">
+                <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=100&q=80" alt="Goat">
+              </div>
+            </div>
+            <div class="vacc-card-vaccines">
+              <div class="vacc-vaccine-item">
+                <span class="vacc-vaccine-name">ET + TT Vaccine Due</span>
+                <span class="vacc-vaccine-date">20 Aug 2024</span>
+              </div>
+            </div>
+            <div class="vacc-card-footer">
+              <button class="btn-record" onclick="event.stopPropagation(); app.navigateTo('screen-record-vaccination')">
+                <i class="ph ph-note-pencil"></i> Record
+              </button>
+            </div>
+          </div>
+
+          <!-- Vaccination Card 4 -->
+          <div class="vacc-card" onclick="app.navigateTo('screen-record-vaccination')">
+            <div class="vacc-card-row">
+              <div class="vacc-card-info">
+                <h4>ET-240601-0005</h4>
+                <p class="text-muted">Priya Patnaik</p>
+                <p class="text-muted" style="font-size:11px;">Black Bengal • Female • 10M</p>
+              </div>
+              <div class="vacc-card-img">
+                <img src="https://images.unsplash.com/photo-1619087578330-81995f591f42?auto=format&fit=crop&w=100&q=80" alt="Goat">
+              </div>
+            </div>
+            <div class="vacc-card-vaccines">
+              <div class="vacc-vaccine-item">
+                <span class="vacc-vaccine-name">Goat Pox Vaccine Due</span>
+                <span class="vacc-vaccine-date">25 Aug 2024</span>
+              </div>
+            </div>
+            <div class="vacc-card-footer">
+              <button class="btn-record" onclick="event.stopPropagation(); app.navigateTo('screen-record-vaccination')">
+                <i class="ph ph-note-pencil"></i> Record
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMPLETED Tab Content -->
+        <div id="vacc-tab-completed" class="vacc-tab-content">
+          <!-- Completed Card 1 -->
+          <div class="vacc-card completed">
+            <div class="vacc-card-row">
+              <div class="vacc-card-info">
+                <h4>ET-240601-0001</h4>
+                <p class="text-muted">Ramesh Naik</p>
+                <p class="text-muted" style="font-size:11px;">Black Bengal • Female • 12M</p>
+              </div>
+              <div class="vacc-card-img">
+                <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=100&q=80" alt="Goat">
+              </div>
+            </div>
+            <div class="vacc-card-vaccines">
+              <div class="vacc-vaccine-item done">
+                <span class="vacc-vaccine-name"><i class="ph-fill ph-check-circle text-green"></i> PPR Vaccine</span>
+                <span class="vacc-vaccine-date">10 Jun 2024</span>
+              </div>
+              <div class="vacc-vaccine-item done">
+                <span class="vacc-vaccine-name"><i class="ph-fill ph-check-circle text-green"></i> ET + TT Vaccine</span>
+                <span class="vacc-vaccine-date">10 Jun 2024</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Completed Card 2 -->
+          <div class="vacc-card completed">
+            <div class="vacc-card-row">
+              <div class="vacc-card-info">
+                <h4>ET-240601-0002</h4>
+                <p class="text-muted">Suresh Behera</p>
+                <p class="text-muted" style="font-size:11px;">Beetal • Male • 8M</p>
+              </div>
+              <div class="vacc-card-img">
+                <img src="https://images.unsplash.com/photo-1619087578330-81995f591f42?auto=format&fit=crop&w=100&q=80" alt="Goat">
+              </div>
+            </div>
+            <div class="vacc-card-vaccines">
+              <div class="vacc-vaccine-item done">
+                <span class="vacc-vaccine-name"><i class="ph-fill ph-check-circle text-green"></i> PPR Vaccine</span>
+                <span class="vacc-vaccine-date">05 Jun 2024</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Completed Card 3 -->
+          <div class="vacc-card completed">
+            <div class="vacc-card-row">
+              <div class="vacc-card-info">
+                <h4>ET-240601-0010</h4>
+                <p class="text-muted">Gita Mohanty</p>
+                <p class="text-muted" style="font-size:11px;">Black Bengal • Female • 18M</p>
+              </div>
+              <div class="vacc-card-img">
+                <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=100&q=80" alt="Goat">
+              </div>
+            </div>
+            <div class="vacc-card-vaccines">
+              <div class="vacc-vaccine-item done">
+                <span class="vacc-vaccine-name"><i class="ph-fill ph-check-circle text-green"></i> FMD Vaccine</span>
+                <span class="vacc-vaccine-date">01 Jun 2024</span>
+              </div>
+              <div class="vacc-vaccine-item done">
+                <span class="vacc-vaccine-name"><i class="ph-fill ph-check-circle text-green"></i> Goat Pox</span>
+                <span class="vacc-vaccine-date">01 Jun 2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAB to add new vaccination -->
+      <button class="fab" onclick="app.navigateTo('screen-record-vaccination')">
+        <i class="ph ph-plus"></i>
+      </button>
+
+      <!-- Bottom Navigation -->
+      <nav class="bottom-nav">
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-dashboard')"><i class="ph ph-house"></i><span>Home</span></a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-goat-list')"><i class="ph ph-bug"></i><span>Goats</span></a>
+        <a href="#" class="nav-item active" onclick="app.navigateTo('screen-vaccination')"><i class="ph-fill ph-syringe"></i><span>Vaccination</span></a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-claims')"><i class="ph ph-file-text"></i><span>Claims</span></a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-more')"><i class="ph ph-dots-three-circle"></i><span>More</span></a>
+      </nav>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 4B: RECORD VACCINATION                  -->
+    <!-- ============================================== -->
+    <section id="screen-record-vaccination" class="screen">
+      <header class="app-header">
+        <button class="icon-btn" onclick="app.navigateTo('screen-vaccination')"><i class="ph ph-arrow-left"></i></button>
+        <h2>Record Vaccination</h2>
+        <div class="spacer"></div>
+      </header>
+
+      <div class="record-vacc-content">
+        <!-- Goat Info Banner -->
+        <div class="record-vacc-goat-banner">
+          <div class="record-vacc-goat-row">
+            <div>
+              <h4>ET-240601-0001</h4>
+              <p class="text-muted" style="font-size:12px;">Ramesh Naik</p>
+              <p class="text-muted" style="font-size:11px;">Black Bengal • Female • 12M</p>
+            </div>
+            <div class="record-vacc-goat-thumb">
+              <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=100&q=80" alt="Goat">
+            </div>
+          </div>
+        </div>
+
+        <!-- Vaccine Type -->
+        <div class="form-section">
+          <label class="input-label">Vaccine Type *</label>
+          <div class="vaccine-type-chips" id="vaccine-type-chips">
+            <button class="vaccine-chip active" onclick="app.selectVaccineChip(this)">PPR Vaccine</button>
+            <button class="vaccine-chip" onclick="app.selectVaccineChip(this)">ET + TT</button>
+            <button class="vaccine-chip" onclick="app.selectVaccineChip(this)">FMD Vaccine</button>
+            <button class="vaccine-chip" onclick="app.selectVaccineChip(this)">Goat Pox</button>
+          </div>
+        </div>
+
+        <!-- Vaccination Date -->
+        <div class="form-section">
+          <label class="input-label">Vaccination Date *</label>
+          <div class="input-group">
+            <span class="input-icon-left"><i class="ph ph-calendar-blank"></i></span>
+            <input type="date" id="vacc-date" value="2024-08-15">
+          </div>
+        </div>
+
+        <!-- Batch Number -->
+        <div class="form-section">
+          <label class="input-label">Batch Number</label>
+          <div class="input-group">
+            <input type="text" id="vacc-batch" placeholder="Enter batch number" value="PPR-2406-01">
+          </div>
+        </div>
+
+        <!-- Photo (Vaccine Label) -->
+        <div class="form-section">
+          <label class="input-label">Photo (Vaccine Label)</label>
+          <div class="vacc-photo-upload" id="vacc-photo-upload" onclick="document.getElementById('vacc-photo-input').click()">
+            <div class="vacc-photo-placeholder" id="vacc-photo-placeholder">
+              <i class="ph ph-camera"></i>
+              <span>Tap to capture vaccine label photo</span>
+            </div>
+            <img id="vacc-photo-preview" class="vacc-photo-preview" style="display:none;" alt="Vaccine label">
+            <input type="file" id="vacc-photo-input" accept="image/*" capture="environment" style="display:none;" onchange="app.handleVaccPhoto(event)">
+          </div>
+        </div>
+
+        <!-- Carcass Verification -->
+        <div class="form-section">
+          <label class="input-label">Carcass Verification</label>
+          <div class="verification-checks">
+            <label class="check-row">
+              <input type="checkbox" checked style="accent-color: var(--primary-green); width:18px; height:18px;">
+              <span>AI Assessment</span>
+              <span class="check-status text-green">Completed</span>
+            </label>
+            <label class="check-row">
+              <input type="checkbox" style="accent-color: var(--primary-green); width:18px; height:18px;">
+              <span>Photo Capture</span>
+              <span class="check-status text-orange">Pending</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Claim Submission Status -->
+        <div class="form-section">
+          <div class="claim-submission-status">
+            <div class="status-row">
+              <span class="text-muted" style="font-size:12px;">Claim Submission</span>
+              <span class="pill-pending">Pending</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Save Button -->
+      <div class="sticky-footer">
+        <button class="btn-primary" id="btn-save-vaccination" onclick="app.saveVaccination()">
+          <i class="ph ph-floppy-disk"></i> Save Record
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 5: CLAIMS LIST                          -->
+    <!-- ============================================== -->
+    <section id="screen-claims" class="screen">
+      <header class="app-header">
+        <button class="icon-btn" onclick="app.navigateTo('screen-dashboard')"><i class="ph ph-arrow-left"></i></button>
+        <h2>Claims</h2>
+        <button class="icon-btn"><i class="ph ph-funnel"></i></button>
+      </header>
+
+      <div class="list-container">
+        <!-- Claims Tabs -->
+        <div class="vacc-tabs">
+          <button class="vacc-tab active" data-tab="claims-all" onclick="app.switchClaimTab(this, 'claims-all')">All</button>
+          <button class="vacc-tab" data-tab="claims-pending" onclick="app.switchClaimTab(this, 'claims-pending')">Pending</button>
+          <button class="vacc-tab" data-tab="claims-approved" onclick="app.switchClaimTab(this, 'claims-approved')">Approved</button>
+          <button class="vacc-tab" data-tab="claims-rejected" onclick="app.switchClaimTab(this, 'claims-rejected')">Rejected</button>
+        </div>
+
+        <!-- ALL Claims Tab -->
+        <div id="claims-tab-claims-all" class="vacc-tab-content active">
+          <!-- Claim Card 1 - Pending -->
+          <div class="claim-card" onclick="app.navigateTo('screen-claim-review')">
+            <div class="claim-card-header">
+              <div>
+                <h4>CLM-240601-0001</h4>
+                <p class="text-muted">Filed: 15 Jun 2024</p>
+              </div>
+              <span class="claim-status-badge claim-status-pending">Pending</span>
+            </div>
+            <div class="claim-card-body">
+              <div class="claim-detail-row">
+                <span class="claim-label">Goat</span>
+                <span class="claim-value">ET-240601-0001</span>
+              </div>
+              <div class="claim-detail-row">
+                <span class="claim-label">Farmer</span>
+                <span class="claim-value">Ramesh Naik</span>
+              </div>
+              <div class="claim-detail-row">
+                <span class="claim-label">Cause</span>
+                <span class="claim-value">Sudden Death</span>
+              </div>
+              <div class="claim-detail-row">
+                <span class="claim-label">Amount</span>
+                <span class="claim-value" style="font-weight:700; color:var(--primary-green);">₹ 8,000</span>
+              </div>
+            </div>
+            <div class="claim-card-action">
+              <span class="text-muted" style="font-size:11px;"><i class="ph ph-clock"></i> Review pending</span>
+              <i class="ph ph-caret-right" style="color:var(--text-muted)"></i>
+            </div>
+          </div>
+
+          <!-- Claim Card 2 - Approved -->
+          <div class="claim-card" onclick="app.navigateTo('screen-claim-review')">
+            <div class="claim-card-header">
+              <div>
+                <h4>CLM-240601-0002</h4>
+                <p class="text-muted">Filed: 10 Jun 2024</p>
+              </div>
+              <span class="claim-status-badge claim-status-approved">Approved</span>
+            </div>
+            <div class="claim-card-body">
+              <div class="claim-detail-row">
+                <span class="claim-label">Goat</span>
+                <span class="claim-value">ET-240601-0003</span>
+              </div>
+              <div class="claim-detail-row">
+                <span class="claim-label">Farmer</span>
+                <span class="claim-value">Suresh Behera</span>
+              </div>
+              <div class="claim-detail-row">
+                <span class="claim-label">Cause</span>
+                <span class="claim-value">Disease (PPR)</span>
+              </div>
+              <div class="claim-detail-row">
+                <span class="claim-label">Amount</span>
+                <span class="claim-value" style="font-weight:700; color:var(--primary-green);">₹ 8,000</span>
+              </div>
+            </div>
+            <div class="claim-card-action">
+              <span style="font-size:11px; color:var(--primary-green);"><i class="ph-fill ph-check-circle"></i> Approved on 12 Jun 2024</span>
+              <i class="ph ph-caret-right" style="color:var(--text-muted)"></i>
+            </div>
+          </div>
+
+          <!-- Claim Card 3 - Rejected -->
+          <div class="claim-card" onclick="app.navigateTo('screen-claim-review')">
+            <div class="claim-card-header">
+              <div>
+                <h4>CLM-240601-0003</h4>
+                <p class="text-muted">Filed: 05 Jun 2024</p>
+              </div>
+              <span class="claim-status-badge claim-status-rejected">Rejected</span>
+            </div>
+            <div class="claim-card-body">
+              <div class="claim-detail-row">
+                <span class="claim-label">Goat</span>
+                <span class="claim-value">ET-240601-0005</span>
+              </div>
+              <div class="claim-detail-row">
+                <span class="claim-label">Farmer</span>
+                <span class="claim-value">Manoj Sahoo</span>
+              </div>
+              <div class="claim-detail-row">
+                <span class="claim-label">Cause</span>
+                <span class="claim-value">Accident</span>
+              </div>
+              <div class="claim-detail-row">
+                <span class="claim-label">Amount</span>
+                <span class="claim-value" style="font-weight:700; color:var(--color-red);">₹ 8,000</span>
+              </div>
+            </div>
+            <div class="claim-card-action">
+              <span style="font-size:11px; color:var(--color-red);"><i class="ph-fill ph-x-circle"></i> Rejected - Policy lapsed</span>
+              <i class="ph ph-caret-right" style="color:var(--text-muted)"></i>
+            </div>
+          </div>
+
+          <!-- Claim Card 4 - Pending -->
+          <div class="claim-card" onclick="app.navigateTo('screen-claim-review')">
+            <div class="claim-card-header">
+              <div>
+                <h4>CLM-240601-0004</h4>
+                <p class="text-muted">Filed: 18 Jun 2024</p>
+              </div>
+              <span class="claim-status-badge claim-status-pending">Pending</span>
+            </div>
+            <div class="claim-card-body">
+              <div class="claim-detail-row">
+                <span class="claim-label">Goat</span>
+                <span class="claim-value">ET-240601-0010</span>
+              </div>
+              <div class="claim-detail-row">
+                <span class="claim-label">Farmer</span>
+                <span class="claim-value">Gita Mohanty</span>
+              </div>
+              <div class="claim-detail-row">
+                <span class="claim-label">Cause</span>
+                <span class="claim-value">Snake Bite</span>
+              </div>
+              <div class="claim-detail-row">
+                <span class="claim-label">Amount</span>
+                <span class="claim-value" style="font-weight:700; color:var(--primary-green);">₹ 8,000</span>
+              </div>
+            </div>
+            <div class="claim-card-action">
+              <span class="text-muted" style="font-size:11px;"><i class="ph ph-clock"></i> Review pending</span>
+              <i class="ph ph-caret-right" style="color:var(--text-muted)"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- PENDING Claims Tab -->
+        <div id="claims-tab-claims-pending" class="vacc-tab-content">
+          <div class="claim-card" onclick="app.navigateTo('screen-claim-review')">
+            <div class="claim-card-header">
+              <div>
+                <h4>CLM-240601-0001</h4>
+                <p class="text-muted">Filed: 15 Jun 2024</p>
+              </div>
+              <span class="claim-status-badge claim-status-pending">Pending</span>
+            </div>
+            <div class="claim-card-body">
+              <div class="claim-detail-row"><span class="claim-label">Goat</span><span class="claim-value">ET-240601-0001</span></div>
+              <div class="claim-detail-row"><span class="claim-label">Farmer</span><span class="claim-value">Ramesh Naik</span></div>
+              <div class="claim-detail-row"><span class="claim-label">Amount</span><span class="claim-value" style="font-weight:700; color:var(--primary-green);">₹ 8,000</span></div>
+            </div>
+            <div class="claim-card-action">
+              <span class="text-muted" style="font-size:11px;"><i class="ph ph-clock"></i> Review pending</span>
+              <i class="ph ph-caret-right" style="color:var(--text-muted)"></i>
+            </div>
+          </div>
+          <div class="claim-card" onclick="app.navigateTo('screen-claim-review')">
+            <div class="claim-card-header">
+              <div>
+                <h4>CLM-240601-0004</h4>
+                <p class="text-muted">Filed: 18 Jun 2024</p>
+              </div>
+              <span class="claim-status-badge claim-status-pending">Pending</span>
+            </div>
+            <div class="claim-card-body">
+              <div class="claim-detail-row"><span class="claim-label">Goat</span><span class="claim-value">ET-240601-0010</span></div>
+              <div class="claim-detail-row"><span class="claim-label">Farmer</span><span class="claim-value">Gita Mohanty</span></div>
+              <div class="claim-detail-row"><span class="claim-label">Amount</span><span class="claim-value" style="font-weight:700; color:var(--primary-green);">₹ 8,000</span></div>
+            </div>
+            <div class="claim-card-action">
+              <span class="text-muted" style="font-size:11px;"><i class="ph ph-clock"></i> Review pending</span>
+              <i class="ph ph-caret-right" style="color:var(--text-muted)"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- APPROVED Claims Tab -->
+        <div id="claims-tab-claims-approved" class="vacc-tab-content">
+          <div class="claim-card" onclick="app.navigateTo('screen-claim-review')">
+            <div class="claim-card-header">
+              <div>
+                <h4>CLM-240601-0002</h4>
+                <p class="text-muted">Filed: 10 Jun 2024</p>
+              </div>
+              <span class="claim-status-badge claim-status-approved">Approved</span>
+            </div>
+            <div class="claim-card-body">
+              <div class="claim-detail-row"><span class="claim-label">Goat</span><span class="claim-value">ET-240601-0003</span></div>
+              <div class="claim-detail-row"><span class="claim-label">Farmer</span><span class="claim-value">Suresh Behera</span></div>
+              <div class="claim-detail-row"><span class="claim-label">Amount</span><span class="claim-value" style="font-weight:700; color:var(--primary-green);">₹ 8,000</span></div>
+            </div>
+            <div class="claim-card-action">
+              <span style="font-size:11px; color:var(--primary-green);"><i class="ph-fill ph-check-circle"></i> Approved on 12 Jun 2024</span>
+              <i class="ph ph-caret-right" style="color:var(--text-muted)"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- REJECTED Claims Tab -->
+        <div id="claims-tab-claims-rejected" class="vacc-tab-content">
+          <div class="claim-card" onclick="app.navigateTo('screen-claim-review')">
+            <div class="claim-card-header">
+              <div>
+                <h4>CLM-240601-0003</h4>
+                <p class="text-muted">Filed: 05 Jun 2024</p>
+              </div>
+              <span class="claim-status-badge claim-status-rejected">Rejected</span>
+            </div>
+            <div class="claim-card-body">
+              <div class="claim-detail-row"><span class="claim-label">Goat</span><span class="claim-value">ET-240601-0005</span></div>
+              <div class="claim-detail-row"><span class="claim-label">Farmer</span><span class="claim-value">Manoj Sahoo</span></div>
+              <div class="claim-detail-row"><span class="claim-label">Amount</span><span class="claim-value" style="font-weight:700; color:var(--color-red);">₹ 8,000</span></div>
+            </div>
+            <div class="claim-card-action">
+              <span style="font-size:11px; color:var(--color-red);"><i class="ph-fill ph-x-circle"></i> Rejected - Policy lapsed</span>
+              <i class="ph ph-caret-right" style="color:var(--text-muted)"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="bottom-nav">
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-dashboard')"><i class="ph ph-house"></i><span>Home</span></a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-goat-list')"><i class="ph ph-bug"></i><span>Goats</span></a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-vaccination')"><i class="ph ph-syringe"></i><span>Vaccination</span></a>
+        <a href="#" class="nav-item active" onclick="app.navigateTo('screen-claims')"><i class="ph-fill ph-file-text"></i><span>Claims</span></a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-more')"><i class="ph ph-dots-three-circle"></i><span>More</span></a>
+      </nav>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 5B: CLAIM REVIEW                        -->
+    <!-- ============================================== -->
+    <section id="screen-claim-review" class="screen">
+      <header class="app-header">
+        <button class="icon-btn" onclick="app.navigateTo('screen-claims')"><i class="ph ph-arrow-left"></i></button>
+        <h2>Claim Review</h2>
+        <div class="spacer"></div>
+      </header>
+
+      <div class="record-vacc-content">
+        <!-- Claim ID Banner -->
+        <div class="claim-review-banner">
+          <div class="claim-review-banner-row">
+            <div>
+              <p class="text-muted" style="font-size:11px; margin-bottom:2px;">Claim ID</p>
+              <h4 style="font-size:18px;">CLM-240601-0001</h4>
+              <p class="text-muted" style="font-size:11px; margin-top:2px;">Filed: 15 Jun 2024</p>
+            </div>
+            <span class="claim-status-badge claim-status-pending" style="font-size:13px; padding:6px 14px;">Pending</span>
+          </div>
+        </div>
+
+        <!-- Tabs: Details / Photos / AI Assessment / History -->
+        <div class="claim-review-tabs">
+          <button class="cr-tab active" onclick="app.switchCRTab(this, 'cr-details')">Details</button>
+          <button class="cr-tab" onclick="app.switchCRTab(this, 'cr-photos')">Photos</button>
+          <button class="cr-tab" onclick="app.switchCRTab(this, 'cr-ai')">AI Assessment</button>
+          <button class="cr-tab" onclick="app.switchCRTab(this, 'cr-history')">History</button>
+        </div>
+
+        <!-- Details Tab -->
+        <div id="cr-details" class="cr-tab-content active">
+          <div class="form-section">
+            <h4 class="form-section-title"><i class="ph ph-bug"></i> Goat Information</h4>
+            <div class="claim-info-grid">
+              <div class="claim-info-item">
+                <span class="claim-label">Ear Tag</span>
+                <span class="claim-value">ET-240601-0001</span>
+              </div>
+              <div class="claim-info-item">
+                <span class="claim-label">Breed</span>
+                <span class="claim-value">Black Bengal</span>
+              </div>
+              <div class="claim-info-item">
+                <span class="claim-label">Gender</span>
+                <span class="claim-value">Female</span>
+              </div>
+              <div class="claim-info-item">
+                <span class="claim-label">Age</span>
+                <span class="claim-value">12 Months</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h4 class="form-section-title"><i class="ph ph-user"></i> Farmer Details</h4>
+            <div class="claim-info-grid">
+              <div class="claim-info-item">
+                <span class="claim-label">Name</span>
+                <span class="claim-value">Ramesh Naik</span>
+              </div>
+              <div class="claim-info-item">
+                <span class="claim-label">Village</span>
+                <span class="claim-value">Pipli</span>
+              </div>
+              <div class="claim-info-item">
+                <span class="claim-label">Mobile</span>
+                <span class="claim-value">9876543210</span>
+              </div>
+              <div class="claim-info-item">
+                <span class="claim-label">Policy No</span>
+                <span class="claim-value">POL-240601-0001</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h4 class="form-section-title"><i class="ph ph-warning-circle"></i> Death Information</h4>
+            <div class="claim-info-grid">
+              <div class="claim-info-item">
+                <span class="claim-label">Date of Death</span>
+                <span class="claim-value">15 Jun 2024</span>
+              </div>
+              <div class="claim-info-item">
+                <span class="claim-label">Cause (IND)</span>
+                <span class="claim-value">Sudden Death</span>
+              </div>
+              <div class="claim-info-item">
+                <span class="claim-label">AI Assessment</span>
+                <span class="claim-value" style="color:var(--color-orange);">PPR (High Confidence)</span>
+              </div>
+              <div class="claim-info-item">
+                <span class="claim-label">Face Score</span>
+                <span class="claim-value" style="color:var(--primary-green); font-weight:700;">98% Match (15/20)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h4 class="form-section-title"><i class="ph ph-currency-inr"></i> Claim Amount</h4>
+            <div class="claim-amount-box">
+              <span class="claim-amount-value">₹ 8,000</span>
+              <span class="text-muted" style="font-size:12px;">Sum Insured Amount</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photos Tab -->
+        <div id="cr-photos" class="cr-tab-content">
+          <div class="form-section">
+            <h4 class="form-section-title"><i class="ph ph-images"></i> Carcass Photos</h4>
+            <div class="photo-review-grid">
+              <div class="photo-review-item">
+                <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=200&q=80" alt="Full Body">
+                <span>Full Body</span>
+              </div>
+              <div class="photo-review-item">
+                <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=200&q=80" alt="Ear Tag" style="transform:scaleX(-1);">
+                <span>Ear Tag</span>
+              </div>
+              <div class="photo-review-item">
+                <img src="https://images.unsplash.com/photo-1619087578330-81995f591f42?auto=format&fit=crop&w=200&q=80" alt="Close-up">
+                <span>Close-up</span>
+              </div>
+              <div class="photo-review-item">
+                <img src="https://images.unsplash.com/photo-1619087578330-81995f591f42?auto=format&fit=crop&w=200&q=80" alt="Location" style="transform:scaleX(-1);">
+                <span>Location</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-section">
+            <h4 class="form-section-title"><i class="ph ph-user-rectangle"></i> Farmer Selfie with Carcass</h4>
+            <div class="photo-review-grid" style="grid-template-columns: 1fr;">
+              <div class="photo-review-item" style="height: 180px;">
+                <img src="https://i.pravatar.cc/400?img=12" alt="Farmer Selfie" style="height:100%; width:100%; object-fit:cover;">
+                <span>Verified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Assessment Tab -->
+        <div id="cr-ai" class="cr-tab-content">
+          <div class="form-section">
+            <h4 class="form-section-title"><i class="ph ph-robot"></i> AI Analysis Result</h4>
+            <div class="ai-result-card">
+              <div class="ai-result-header">
+                <i class="ph-fill ph-check-circle" style="font-size:32px; color:var(--primary-green)"></i>
+                <div>
+                  <h4>Carcass Verified</h4>
+                  <p class="text-muted">AI has confirmed the carcass identity</p>
+                </div>
+              </div>
+              <div class="ai-result-metrics">
+                <div class="ai-metric">
+                  <span class="ai-metric-label">Face Match</span>
+                  <div class="ai-metric-bar"><div class="ai-metric-fill" style="width:98%;"></div></div>
+                  <span class="ai-metric-value">98%</span>
+                </div>
+                <div class="ai-metric">
+                  <span class="ai-metric-label">Ear Tag Match</span>
+                  <div class="ai-metric-bar"><div class="ai-metric-fill" style="width:95%;"></div></div>
+                  <span class="ai-metric-value">95%</span>
+                </div>
+                <div class="ai-metric">
+                  <span class="ai-metric-label">Body Pattern</span>
+                  <div class="ai-metric-bar"><div class="ai-metric-fill" style="width:92%;"></div></div>
+                  <span class="ai-metric-value">92%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-section">
+            <h4 class="form-section-title"><i class="ph ph-stethoscope"></i> Disease Detection</h4>
+            <div class="ai-disease-card">
+              <div class="ai-disease-row"><span>Primary Diagnosis</span><span class="claim-value" style="font-weight:600;">PPR (Peste des Petits Ruminants)</span></div>
+              <div class="ai-disease-row"><span>Confidence</span><span class="pill-pending" style="background:rgba(249,115,22,0.1);">High (89%)</span></div>
+              <div class="ai-disease-row"><span>Symptoms Detected</span><span class="claim-value">Respiratory distress, oral lesions</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- History Tab -->
+        <div id="cr-history" class="cr-tab-content">
+          <div class="form-section">
+            <h4 class="form-section-title"><i class="ph ph-clock-counter-clockwise"></i> Activity Timeline</h4>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot active"></div>
+                <div class="timeline-content">
+                  <h5>Claim Filed</h5>
+                  <p class="text-muted">Sushma Didi filed claim CLM-240601-0001</p>
+                  <span class="text-muted" style="font-size:10px;">15 Jun 2024, 10:30 AM</span>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot active"></div>
+                <div class="timeline-content">
+                  <h5>Photos Uploaded</h5>
+                  <p class="text-muted">4 carcass photos + farmer selfie uploaded</p>
+                  <span class="text-muted" style="font-size:10px;">15 Jun 2024, 10:35 AM</span>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot active"></div>
+                <div class="timeline-content">
+                  <h5>AI Assessment Completed</h5>
+                  <p class="text-muted">Carcass verified – 98% face match</p>
+                  <span class="text-muted" style="font-size:10px;">15 Jun 2024, 10:36 AM</span>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot pending"></div>
+                <div class="timeline-content">
+                  <h5>Coordinator Review</h5>
+                  <p class="text-muted">Awaiting coordinator approval</p>
+                  <span class="text-muted" style="font-size:10px;">Pending</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Approve / Reject / Hold Buttons -->
+      <div class="claim-action-footer">
+        <button class="btn-claim-approve" onclick="app.handleClaimAction('approve')">
+          <i class="ph ph-check-circle"></i> Approve
+        </button>
+        <button class="btn-claim-reject" onclick="app.handleClaimAction('reject')">
+          <i class="ph ph-x-circle"></i> Reject
+        </button>
+        <button class="btn-claim-hold" onclick="app.handleClaimAction('hold')">
+          <i class="ph ph-pause-circle"></i> Hold
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 7: MORTALITY REPORT                     -->
+    <!-- ============================================== -->
+    <section id="screen-mortality" class="screen">
+      <header class="app-header">
+        <button class="icon-btn" onclick="app.navigateTo('screen-dashboard')"><i class="ph ph-arrow-left"></i></button>
+        <h2>Mortality Report</h2>
+        <div class="spacer"></div>
+      </header>
+
+      <div class="record-vacc-content">
+        <!-- Select Goat -->
+        <div class="form-section">
+          <label class="input-label">Select Goat *</label>
+          <div class="input-group select-wrapper">
+            <select id="mortality-goat-select">
+              <option value="ET-240601-0001">ET-240601-0001 — Ramesh Naik</option>
+              <option value="ET-240601-0002">ET-240601-0002 — Suresh Behera</option>
+              <option value="ET-240601-0005">ET-240601-0005 — Priya Patnaik</option>
+              <option value="ET-240601-0008">ET-240601-0008 — Manoj Sahoo</option>
+              <option value="ET-240601-0010">ET-240601-0010 — Gita Mohanty</option>
+            </select>
+            <i class="ph ph-caret-down"></i>
+          </div>
+        </div>
+
+        <!-- Goat Info (auto-populated) -->
+        <div class="record-vacc-goat-banner" id="mortality-goat-info">
+          <div class="record-vacc-goat-row">
+            <div>
+              <h4>ET-240601-0001</h4>
+              <p class="text-muted" style="font-size:12px;">Ramesh Naik</p>
+              <p class="text-muted" style="font-size:11px;">Black Bengal • Female • 12M</p>
+            </div>
+            <div class="record-vacc-goat-thumb">
+              <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=100&q=80" alt="Goat">
+            </div>
+          </div>
+        </div>
+
+        <!-- Death Notification -->
+        <div class="form-section">
+          <h4 class="form-section-title"><i class="ph ph-warning-circle"></i> Death Notification</h4>
+          <label class="input-label">Date & Time of Death *</label>
+          <div class="input-group">
+            <span class="input-icon-left"><i class="ph ph-calendar-blank"></i></span>
+            <input type="datetime-local" id="death-datetime" value="2024-06-15T07:30">
+          </div>
+
+          <label class="input-label" style="margin-top:16px;">Cause of Death *</label>
+          <div class="input-group select-wrapper">
+            <select id="death-cause">
+              <option>Sudden Death</option>
+              <option>Disease (PPR)</option>
+              <option>Disease (FMD)</option>
+              <option>Snake Bite</option>
+              <option>Accident</option>
+              <option>Predator Attack</option>
+              <option>Unknown</option>
+            </select>
+            <i class="ph ph-caret-down"></i>
+          </div>
+
+          <label class="input-label" style="margin-top:16px;">Description (Optional)</label>
+          <div class="input-group">
+            <textarea id="death-description" placeholder="Describe the circumstances..." style="flex:1; padding:14px; border:none; outline:none; font-size:14px; font-family:var(--font-family); resize:vertical; min-height:80px;"></textarea>
+          </div>
+        </div>
+
+        <!-- Carcass Verification -->
+        <div class="form-section">
+          <h4 class="form-section-title"><i class="ph ph-shield-check"></i> Carcass Verification</h4>
+          <div class="verification-checks">
+            <label class="check-row">
+              <input type="checkbox" id="mort-ai-check" style="accent-color:var(--primary-green); width:18px; height:18px;">
+              <span>AI Assessment</span>
+              <span class="check-status text-muted" id="mort-ai-status">Not Started</span>
+            </label>
+            <label class="check-row">
+              <input type="checkbox" id="mort-photo-check" style="accent-color:var(--primary-green); width:18px; height:18px;">
+              <span>Photo Capture</span>
+              <span class="check-status text-muted" id="mort-photo-status">Not Started</span>
+            </label>
+            <label class="check-row">
+              <input type="checkbox" id="mort-ear-check" style="accent-color:var(--primary-green); width:18px; height:18px;">
+              <span>Ear Tag Verified</span>
+              <span class="check-status text-muted" id="mort-ear-status">Not Started</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Carcass Handler -->
+        <div class="form-section">
+          <h4 class="form-section-title"><i class="ph ph-user-circle-check"></i> Carcass Handler</h4>
+          <label class="input-label">Handler Name</label>
+          <div class="input-group">
+            <input type="text" placeholder="Enter handler name" id="handler-name">
+          </div>
+          <label class="input-label">Handler Mobile</label>
+          <div class="input-group">
+            <input type="tel" placeholder="Enter mobile number" id="handler-mobile">
+          </div>
+        </div>
+
+        <!-- Photo Capture Button -->
+        <div class="form-section" style="text-align:center;">
+          <button class="btn-primary" onclick="app.navigateTo('screen-carcass-photos')" style="display:inline-flex; align-items:center; gap:8px; width:auto; padding:14px 28px;">
+            <i class="ph ph-camera"></i> Capture Carcass Photos
+          </button>
+        </div>
+      </div>
+
+      <!-- Submit Footer -->
+      <div class="sticky-footer">
+        <button class="btn-back" onclick="app.navigateTo('screen-dashboard')">Cancel</button>
+        <button class="btn-primary" id="btn-submit-mortality" onclick="app.submitMortality()">
+          <i class="ph ph-paper-plane-tilt"></i> Submit Report
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 7B: CARCASS PHOTO CAPTURE               -->
+    <!-- ============================================== -->
+    <section id="screen-carcass-photos" class="screen">
+      <header class="app-header">
+        <button class="icon-btn" onclick="app.navigateTo('screen-mortality')"><i class="ph ph-arrow-left"></i></button>
+        <h2>Carcass Photo Capture</h2>
+        <div class="spacer"></div>
+      </header>
+
+      <div class="record-vacc-content">
+        <div class="form-section" style="text-align:center;">
+          <p style="font-size:13px; color:var(--text-muted); margin-bottom:4px;">Capture all required photos</p>
+          <p style="font-size:11px; color:var(--color-orange);"><i class="ph ph-warning"></i> Ensure clear photos in good lighting</p>
+        </div>
+
+        <!-- Photo Grid -->
+        <div class="carcass-photo-grid">
+          <div class="carcass-photo-slot" onclick="app.triggerCarcassPhoto(this, 0)">
+            <div class="carcass-photo-inner">
+              <i class="ph ph-camera"></i>
+              <span>Full Body Front</span>
+            </div>
+            <input type="file" accept="image/*" capture="environment" style="display:none;" onchange="app.handleCarcassPhoto(event, this.parentElement)">
+          </div>
+          <div class="carcass-photo-slot" onclick="app.triggerCarcassPhoto(this, 1)">
+            <div class="carcass-photo-inner">
+              <i class="ph ph-camera"></i>
+              <span>Ear Tag Photo</span>
+            </div>
+            <input type="file" accept="image/*" capture="environment" style="display:none;" onchange="app.handleCarcassPhoto(event, this.parentElement)">
+          </div>
+          <div class="carcass-photo-slot" onclick="app.triggerCarcassPhoto(this, 2)">
+            <div class="carcass-photo-inner">
+              <i class="ph ph-camera"></i>
+              <span>Close-up Photo</span>
+            </div>
+            <input type="file" accept="image/*" capture="environment" style="display:none;" onchange="app.handleCarcassPhoto(event, this.parentElement)">
+          </div>
+          <div class="carcass-photo-slot" onclick="app.triggerCarcassPhoto(this, 3)">
+            <div class="carcass-photo-inner">
+              <i class="ph ph-camera"></i>
+              <span>Location Photo</span>
+            </div>
+            <input type="file" accept="image/*" capture="environment" style="display:none;" onchange="app.handleCarcassPhoto(event, this.parentElement)">
+          </div>
+          <div class="carcass-photo-slot wide" onclick="app.triggerCarcassPhoto(this, 4)">
+            <div class="carcass-photo-inner">
+              <i class="ph ph-user-rectangle"></i>
+              <span>Farmer Selfie with Carcass</span>
+            </div>
+            <input type="file" accept="image/*" capture="user" style="display:none;" onchange="app.handleCarcassPhoto(event, this.parentElement)">
+          </div>
+        </div>
+      </div>
+
+      <div class="sticky-footer">
+        <button class="btn-back" onclick="app.navigateTo('screen-mortality')">Back</button>
+        <button class="btn-primary" onclick="app.navigateTo('screen-mortality')">
+          <i class="ph ph-check"></i> Done
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN 6: MORE                                 -->
+    <!-- ============================================== -->
+    <section id="screen-more" class="screen">
+      <header class="app-header">
+        <h2>More</h2>
+      </header>
+      <div class="list-container" style="display:flex; justify-content:center; align-items:center;">
+        <p class="text-muted">Settings</p>
+      </div>
+      <nav class="bottom-nav">
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-dashboard')"><i
+            class="ph ph-house"></i><span>Home</span></a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-goat-list')"><i
+            class="ph ph-bug"></i><span>Goats</span></a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-vaccination')"><i
+            class="ph ph-syringe"></i><span>Vaccination</span></a>
+        <a href="#" class="nav-item" onclick="app.navigateTo('screen-claims')"><i
+            class="ph ph-file-text"></i><span>Claims</span></a>
+        <a href="#" class="nav-item active" onclick="app.navigateTo('screen-more')"><i
+            class="ph-fill ph-dots-three-circle"></i><span>More</span></a>
+      </nav>
+    </section>
+
+    <!-- ================== ENROLLMENT FLOW ================== -->
+    <!-- STEP 1 -->
+    <section id="screen-enroll-1" class="screen">
+      <header class="enrollment-header">
+        <h3>Enrollment (Step 1 of 7)</h3>
+        <div class="stepper">
+          <div class="step-circle active">1</div>
+          <div class="step-circle">2</div>
+          <div class="step-circle">3</div>
+          <div class="step-circle">4</div>
+          <div class="step-circle">5</div>
+          <div class="step-circle">6</div>
+          <div class="step-circle">7</div>
+        </div>
+      </header>
+      <div class="enrollment-content">
+        <h4 class="section-label">Farmer Details</h4>
+        <div class="login-form" style="margin-top: 0">
+          <label class="input-label">Farmer Name *</label>
+          <div class="input-group"><input type="text" value="Ramesh Naik"></div>
+          <label class="input-label">Mobile Number *</label>
+          <div class="input-group"><input type="tel" value="9876543210"></div>
+          <label class="input-label">Village *</label>
+          <div class="input-group"><input type="text" value="Pipli"></div>
+          <label class="input-label">GPS Location (Auto-captured)</label>
+          <div class="input-group"><input type="text" value="20.3557° N, 85.8245° E" readonly
+              style="color:var(--text-muted)"></div>
+          <label class="input-label">Aadhaar / Govt ID</label>
+          <div class="input-group"><input type="text" value="1234 5678 9012"></div>
+        </div>
+      </div>
+      <div class="sticky-footer">
+        <button class="btn-back" onclick="app.navigateTo('screen-goat-list')">Back</button>
+        <button class="btn-primary" onclick="app.navigateTo('screen-enroll-2')">Next</button>
+      </div>
+    </section>
+
+    <!-- STEP 2 -->
+    <section id="screen-enroll-2" class="screen">
+      <header class="enrollment-header">
+        <h3>Enrollment (Step 2 of 7)</h3>
+        <div class="stepper">
+          <div class="step-circle completed">1</div>
+          <div class="step-circle active">2</div>
+          <div class="step-circle">3</div>
+          <div class="step-circle">4</div>
+          <div class="step-circle">5</div>
+          <div class="step-circle">6</div>
+          <div class="step-circle">7</div>
+        </div>
+      </header>
+      <div class="enrollment-content">
+        <h4 class="section-label">Goat Details</h4>
+        <div class="login-form" style="margin-top: 0">
+          <label class="input-label">Breed *</label>
+          <div class="input-group select-wrapper">
+            <select>
+              <option>Black Bengal</option>
+              <option>Beetal</option>
+            </select>
+            <i class="ph ph-caret-down"></i>
+          </div>
+
+          <label class="input-label">Gender *</label>
+          <div class="radio-group" style="gap:10px;">
+            <label class="radio-item"><input type="radio" name="gender" checked> Female</label>
+            <label class="radio-item"><input type="radio" name="gender"> Male</label>
+          </div>
+
+          <div style="display:flex; gap:16px;">
+            <div style="flex:1;">
+              <label class="input-label">Age *</label>
+              <div class="input-group"><input type="number" value="12"></div>
+            </div>
+            <div style="flex:1;">
+              <label class="input-label">Unit</label>
+              <div class="input-group select-wrapper">
+                <select>
+                  <option>Months</option>
+                  <option>Years</option>
+                </select>
+                <i class="ph ph-caret-down"></i>
+              </div>
+            </div>
+          </div>
+
+          <label class="input-label">Weight (Approx Kg)</label>
+          <div class="input-group"><input type="number" value="18"></div>
+
+          <label class="input-label">Color</label>
+          <div class="input-group"><input type="text" value="Black with White Spots"></div>
+        </div>
+      </div>
+      <div class="sticky-footer">
+        <button class="btn-back" onclick="app.navigateTo('screen-enroll-1')">Back</button>
+        <button class="btn-primary" onclick="app.navigateTo('screen-enroll-3')">Next</button>
+      </div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section id="screen-enroll-3" class="screen">
+      <header class="enrollment-header">
+        <h3>Enrollment (Step 3 of 7)</h3>
+        <div class="stepper">
+          <div class="step-circle completed">1</div>
+          <div class="step-circle completed">2</div>
+          <div class="step-circle active">3</div>
+          <div class="step-circle">4</div>
+          <div class="step-circle">5</div>
+          <div class="step-circle">6</div>
+          <div class="step-circle">7</div>
+        </div>
+      </header>
+      <div class="enrollment-content">
+        <div style="text-align:center; margin-bottom:16px;">
+          <h4 class="section-label" style="margin:0">Photo Capture</h4>
+          <p style="font-size:12px; color:var(--text-muted);">(4 Photos Required)</p>
+        </div>
+
+        <div class="upload-grid">
+          <div class="upload-box">
+            <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=150&q=80"
+              alt="Left">
+            <span>Left Side</span>
+          </div>
+          <div class="upload-box">
+            <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=150&q=80"
+              style="transform: scaleX(-1);" alt="Right">
+            <span>Right Side</span>
+          </div>
+          <div class="upload-box" style="justify-content:center; padding:30px 0;">
+            <i class="ph ph-camera" style="font-size:32px; color:var(--text-muted)"></i>
+            <span>Front Side</span>
+          </div>
+          <div class="upload-box" style="justify-content:center; padding:30px 0;">
+            <i class="ph ph-camera" style="font-size:32px; color:var(--text-muted)"></i>
+            <span>Ear Tag Close-up</span>
+          </div>
+        </div>
+        <p style="font-size:11px; color:var(--text-muted); text-align:center; margin-top:20px;">
+          <i class="ph-fill ph-check-circle text-green"></i> Ensure clear photos in good lighting
+        </p>
+      </div>
+      <div class="sticky-footer">
+        <button class="btn-back" onclick="app.navigateTo('screen-enroll-2')">Back</button>
+        <button class="btn-primary" onclick="app.navigateTo('screen-enroll-4')">Next</button>
+      </div>
+    </section>
+
+    <!-- STEP 4 -->
+    <section id="screen-enroll-4" class="screen">
+      <header class="enrollment-header">
+        <h3>Enrollment (Step 4 of 7)</h3>
+        <div class="stepper">
+          <div class="step-circle completed">1</div>
+          <div class="step-circle completed">2</div>
+          <div class="step-circle completed">3</div>
+          <div class="step-circle active">4</div>
+          <div class="step-circle">5</div>
+          <div class="step-circle">6</div>
+          <div class="step-circle">7</div>
+        </div>
+      </header>
+      <div class="enrollment-content">
+        <h4 class="section-label">Ear Tagging</h4>
+        <div class="login-form" style="margin-top: 0">
+          <label class="input-label">Ear Tag Number *</label>
+          <div class="input-group"><input type="text" value="ET-240601-0001"></div>
+
+          <label class="input-label" style="margin-top:24px;">Scan QR Code (Optional)</label>
+          <div
+            style="border:1px dashed var(--border-color); border-radius:12px; padding:40px; text-align:center; background:var(--secondary-gray); cursor:pointer;">
+            <i class="ph ph-qr-code" style="font-size:64px; color:var(--primary-green)"></i>
+            <p style="font-size:13px; margin-top:8px;">Tap to scan</p>
+          </div>
+          <p
+            style="font-size:12px; color:var(--primary-green); display:flex; align-items:center; gap:6px; margin-top:16px;">
+            <i class="ph-fill ph-check-circle"></i> Ear Tag Verified Successfully
+          </p>
+        </div>
+      </div>
+      <div class="sticky-footer">
+        <button class="btn-back" onclick="app.navigateTo('screen-enroll-3')">Back</button>
+        <button class="btn-primary" onclick="app.navigateTo('screen-enroll-5')">Next</button>
+      </div>
+    </section>
+
+    <!-- STEP 5 -->
+    <section id="screen-enroll-5" class="screen">
+      <header class="enrollment-header">
+        <h3>Enrollment (Step 5 of 7)</h3>
+        <div class="stepper">
+          <div class="step-circle completed">1</div>
+          <div class="step-circle completed">2</div>
+          <div class="step-circle completed">3</div>
+          <div class="step-circle completed">4</div>
+          <div class="step-circle active">5</div>
+          <div class="step-circle">6</div>
+          <div class="step-circle">7</div>
+        </div>
+      </header>
+      <div class="enrollment-content">
+        <h4 class="section-label">Vaccination Status</h4>
+        <div class="checkbox-list">
+          <div class="checkbox-item">
+            <label style="display:flex; align-items:center; gap:10px; font-size:14px; font-weight:500;">
+              <input type="checkbox" checked style="accent-color:var(--primary-green); width:18px; height:18px;"> PPR
+              Vaccine
+            </label>
+            <span class="pill-given">Given</span>
+          </div>
+          <div class="checkbox-item">
+            <label style="display:flex; align-items:center; gap:10px; font-size:14px; font-weight:500;">
+              <input type="checkbox" checked style="accent-color:var(--primary-green); width:18px; height:18px;"> ET +
+              TT Vaccine
+            </label>
+            <span class="pill-given">Given</span>
+          </div>
+          <div class="checkbox-item">
+            <label style="display:flex; align-items:center; gap:10px; font-size:14px; font-weight:500;">
+              <input type="checkbox" style="accent-color:var(--primary-green); width:18px; height:18px;"> FMD Vaccine
+            </label>
+            <span class="pill-pending">Pending</span>
+          </div>
+          <div class="checkbox-item">
+            <label style="display:flex; align-items:center; gap:10px; font-size:14px; font-weight:500;">
+              <input type="checkbox" style="accent-color:var(--primary-green); width:18px; height:18px;"> Goat Pox
+              Vaccine
+            </label>
+            <span class="pill-pending">Pending</span>
+          </div>
+        </div>
+
+        <div class="receipt-box" style="margin-top:32px;">
+          <p style="font-size:12px; color:var(--text-muted);">Next Vaccination Due</p>
+          <div
+            style="font-size:16px; font-weight:600; margin-top:4px; display:flex; align-items:center; justify-content:center; gap:8px;">
+            <i class="ph ph-calendar-blank"></i> 15 Aug 2024
+          </div>
+        </div>
+      </div>
+      <div class="sticky-footer">
+        <button class="btn-back" onclick="app.navigateTo('screen-enroll-4')">Back</button>
+        <button class="btn-primary" onclick="app.navigateTo('screen-enroll-6')">Next</button>
+      </div>
+    </section>
+
+    <!-- STEP 6 -->
+    <section id="screen-enroll-6" class="screen">
+      <header class="enrollment-header">
+        <h3>Enrollment (Step 6 of 7)</h3>
+        <div class="stepper">
+          <div class="step-circle completed">1</div>
+          <div class="step-circle completed">2</div>
+          <div class="step-circle completed">3</div>
+          <div class="step-circle completed">4</div>
+          <div class="step-circle completed">5</div>
+          <div class="step-circle active">6</div>
+          <div class="step-circle">7</div>
+        </div>
+      </header>
+      <div class="enrollment-content">
+        <h4 class="section-label" style="text-align:center;">Premium Collection</h4>
+        <div class="receipt-box" style="margin-bottom:24px;">
+          <p style="font-size:12px; color:var(--text-muted);">Premium Amount</p>
+          <h2 style="font-size:28px; color:var(--primary-green); margin-top:8px;">₹ 350</h2>
+        </div>
+
+        <div class="login-form" style="margin-top: 0">
+          <label class="input-label">Payment Mode</label>
+          <div class="radio-group">
+            <label class="radio-item" style="font-size:12px;"><input type="radio" name="payment" checked> Cash</label>
+            <label class="radio-item" style="font-size:12px;"><input type="radio" name="payment"> UPI</label>
+            <label class="radio-item" style="font-size:12px;"><input type="radio" name="payment"> Other</label>
+          </div>
+
+          <label class="input-label">Amount Received *</label>
+          <div class="input-group">
+            <span class="country-code" style="background:white;">₹</span>
+            <input type="number" value="350">
+          </div>
+
+          <label class="input-label">Receipt Number (Auto)</label>
+          <div class="input-group">
+            <input type="text" value="RCP-240601-0001" readonly style="color:var(--text-muted)">
+          </div>
+        </div>
+      </div>
+      <div class="sticky-footer">
+        <button class="btn-back" onclick="app.navigateTo('screen-enroll-5')">Back</button>
+        <button class="btn-primary" onclick="app.navigateTo('screen-enroll-7')">Next</button>
+      </div>
+    </section>
+
+    <!-- STEP 7 -->
+    <section id="screen-enroll-7" class="screen">
+      <header class="enrollment-header">
+        <h3>Enrollment (Step 7 of 7)</h3>
+        <div class="stepper" style="border:none;">
+          <div class="step-circle completed" style="background:transparent; border-color:transparent;"></div>
+        </div>
+      </header>
+      <div class="enrollment-content success-screen" style="padding-top:0;">
+        <div class="success-icon">
+          <i class="ph ph-check"></i>
+        </div>
+        <h3 style="font-size:18px; margin-bottom:8px;">Policy Generated<br>Successfully! <span
+            style="font-size:24px;">🎉</span></h3>
+
+        <div class="policy-card">
+          <div class="row">
+            <label>Policy Number</label>
+            <h4 style="color:var(--primary-green)">POL-240601-0001</h4>
+          </div>
+          <div class="row">
+            <label>Validity</label>
+            <h4>01 Jun 2024 - 31 May 2025</h4>
+          </div>
+          <div class="row">
+            <label>Sum Insured</label>
+            <h4>₹ 8,000</h4>
+          </div>
+
+          <button class="btn-primary"
+            style="margin-top:20px; font-size:14px; padding:12px; display:flex; align-items:center; justify-content:center; gap:8px;">
+            <i class="ph ph-download-simple"></i> Download Policy Certificate
+          </button>
+        </div>
+      </div>
+      <div class="sticky-footer" style="flex-direction:column;">
+        <button class="btn-primary" onclick="app.navigateTo('screen-dashboard')">Finish</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
